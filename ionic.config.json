@@ -7,5 +7,63 @@
     "www/**/*",
     "!www/lib/**/*",
     "!www/**/*.map"
+  ],
+  "proxies": [
+    {
+      "path": "/getTaskSet",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/getTaskSet"
+    },
+    {
+      "path": "/addTask",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/addTask"
+    },
+    {
+      "path": "/deleteTask",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/deleteTask"
+    },
+    {
+      "path":"/login",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/login"
+    },
+    {
+      "path": "/cree",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/cree"
+    },
+    {
+      "path": "/ListeCreate",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/ListeCreate"
+    },
+    {
+      "path": "/Liste/delete",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/Liste/delete"
+    },
+    {
+      "path": "/CreateList/",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/CreateList/"
+    },
+    {
+      "path": "/DeleteList",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/DeleteList"
+    },
+    {
+      "path": "/Liste",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/Liste"
+    },
+    {
+      "path": "/Liste/modify",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/Liste/modify"
+    },
+    {
+      "path": "/Listetache",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/Listetache"
+    },
+    {
+      "path": "/DiffListe",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/DiffListe"
+    },
+    {
+      "path": "/AfficheListe",
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/AfficheListe"
+    }
   ]
 }

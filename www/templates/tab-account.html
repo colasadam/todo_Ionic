@@ -1,9 +1,14 @@
-<ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    </ion-list>
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Page d'accueil
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-item ng-repeat="task in activeProject.tasks">
+        
+    </ion-item>
+    <button ion-button (click)="onGoToAppareils()">Appareils</button>
   </ion-content>
-</ion-view>

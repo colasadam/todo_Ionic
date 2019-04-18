@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Liste de choses à faire</title>
+</head>
+
+<body>
+    <ion-view view-title="Elements">
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">Elements de la liste</h1>
+            <p>Nombre des choses à faire : {{ laliste.length }}</p>
+        </ion-header-bar>
+        <ion-content>
+            <div class="row header">
+                <div class="col">Supprimer</div>
+                <div class="col">Checked</div>
+                <div class="col">Tache</div>
+                <div class="col">De</div>
+                <div class="col">Date</div>
+                <div class="col">Modifier</div>
+            </div>
+            <div class="row" ng-repeat="x in laliste">
+                <div class="col">
+                    <ion-button class="button button-positive " ng-click="deleteTodo(x._id)" color="warning">X</ion-button>
+                </div>
+                <div class="col"><input type = "checkbox" ng-click="isChecked(x._id,x.done)" ng-checked="x.done"></div>
+                <div class="col">
+                        <div id="xtext-{{$index}}" style="display: block;" ng-style="x.done && { 'text-decoration' : 'line-through' }">
+                                {{ x.text }}
+                            </div>
+                        <div id="xtextmodify-{{$index}}" style="display: none;">
+                            <input type="text" class="form-control" name="text" ng-model="$parent.modifyData.text">
+                        </div>
+                </div>
+                <div class="col" ng-style="x.done && { 'text-decoration' : 'line-through' }">{{ x.username }}</div>
+                <div class="col" ng-style="x.done && { 'text-decoration' : 'line-through' }">{{ x.date }}</div>
+                <div class='col'> 
+                        <ion-button class="button button-positive" id="modify-{{$index}}" ng-click="modifier($index, x)" class="btn btn-primary">modifier</button>
+                </div>
+            </div>
+            <div id="buttons-zone">
+                    <input type="text" class="form-control" placeholder="écrire quelque chose" ng-model="$parent.formData.text">
+                    
+                    <ion-button class="button button-positive " ng-click="createTodo()">Ajouter element</ion-button>
+                </div>
+        </ion-content>
+
+
+
+    </ion-view>
+</body>
+
+</html>

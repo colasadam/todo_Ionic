@@ -53,6 +53,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+  
+  .state('tab.liste',{
+    url:'/Liste',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/AfficheListe.html',
+        controller: 'ListCtrl'
+      }
+    }
+  })
+
+  .state('tab.listedetail',{
+    url:'/ListeDetails',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/ListeDetails.html',
+        controller: 'ListDetailsCtrl'
+      }
+    }
+  })
 
   .state('tab.chats', {
       url: '/chats',
@@ -63,6 +83,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
+
+
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {

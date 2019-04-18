@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+</head>
+
+<body>
+    <ion-side-menus>
+            <ion-side-menu-content>
+                    <ion-header-bar class="bar-dark">
+                      <h1 class="title">Todo</h1>
+                      <!-- New Task button-->
+                      <button class="button button-icon" ng-click="newTask()">
+                        <i class="icon ion-compose"></i>
+                      </button>
+                    </ion-header-bar>
+                    <ion-content>
+                      <!-- our list and list items -->
+                      <ion-list>
+                        <ion-item ng-repeat="task in tasks">
+                          {{task.title}}
+                        </ion-item>
+                      </ion-list>
+                    </ion-content>
+                  </ion-side-menu-content>
+
+    </ion-side-menus>
+    <ion-view view-title="Listes">
+        <ion-content>
+            <ion-list>
+                <!-- Fait une liste -->
+                <!-- HREF A CHANGE PAR L'ADRESSE LORSQUON CLIQUE DESSUS + CHANGER LE CONTENU ION ITEM-->
+                <!-- Besoin de cette classe pour rendre ça joli-->
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="y in lalistenom"
+                    type="item-text-wrap">
+                    <!-- href="/Liste/{{chat.id}}" -->
+                    <h2 ng-click="goToListe(y.listname)" >{{y.listname}}</h2>
+                    <i class="icon ion-chevron-right icon-accessory"></i>
+
+                    <ion-option-button class="button-assertive" ng-click="deleteList(y.listname)">
+                        Delete
+                    </ion-option-button>
+
+                </ion-item>
+            </ion-list>
+                <input type="text" placeholder="nouvelle liste" ng-model="$parent.Liste.text">
+                <button type="submit" ng-click="createList()" class="btn btn-danger">Ajouter</button>   
+        </ion-content>
+    </ion-view>
+</body>
+
+</html>
