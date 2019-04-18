@@ -127,35 +127,33 @@ angular.module('starter.controllers', [])
   };
 
     $scope.modifier = function (index, x) {
-      if (document.getElementById('modify-' + index).innerHTML == 'modifier') {
+      console.log(document.getElementById('modify-'+index).innerHTML)
+      if (document.getElementById('modify-'+index).innerHTML=='Modifier') {
         for (pas = 0; pas < $scope.laliste.length; pas++) {
-          document.getElementById('xtextmodify-' + pas).style.display = "none";
-          document.getElementById('xtext-' + pas).style.display = "block";
-          document.getElementById('modify-' + pas).innerHTML = 'modifier';
+            document.getElementById('xtextmodify-'+pas).style.display = "none";
+            document.getElementById('xtext-'+pas).style.display = "block";
+            document.getElementById('modify-'+pas).innerHTML='Modifier';
         }
-        console.log("valeur de x.text : "+ x.text);
         $scope.modifyData.text = x.text;
-        console.log("valeur de la boite" + $scope.modifyData.text);
-        document.getElementById('xtextmodify-' + index).style.display = "block";
-        document.getElementById('xtext-' + index).style.display = "none";
-        document.getElementById('modify-' + index).innerHTML = 'Valider';
-      }
+        document.getElementById('xtextmodify-'+index).style.display = "block";
+        document.getElementById('xtext-'+index).style.display = "none";
+        document.getElementById('modify-'+index).innerHTML='Valider';
+    }
 
-      else {
-        console.log("valeur de la boite avant la validation" + $scope.modifyData.text);
-        document.getElementById('xtextmodify-' + index).style.display = "none";
-        document.getElementById('xtext-' + index).style.display = "block";
-        document.getElementById('modify-' + index).innerHTML = 'modifier';
-        console.log("valeur de la boite à la validation" + $scope.modifyData.text);
-        $http.post('/Liste/modify/' + x._id + '/' + $scope.modifyData.text + '/'+noob)
-          .success(function (data) {
+    else {
+        document.getElementById('xtextmodify-'+index).style.display = "none";
+        document.getElementById('xtext-'+index).style.display = "block";
+        document.getElementById('modify-'+index).innerHTML='Modifier';
+        console.log($scope.modifyData.text);
+        $http.post('/Liste/modify/'+x._id+'/'+$scope.modifyData.text+'/'+noob)
+        .success(function(data){
             $scope.laliste = data;
             console.log(data);
-          })
-          .error(function (data) {
+        })
+        .error(function(data){
             console.log('Error : ' + data);
-          });
-      };
+        });
+    };
     };
   
   })
