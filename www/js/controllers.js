@@ -29,6 +29,8 @@ angular.module('starter.controllers', [])
     .error(function(){
         console.log("Error");
     })
+    $scope.user.username="";
+    $scope.user.password="";
 }
 })
 
