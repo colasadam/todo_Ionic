@@ -6,7 +6,7 @@ angular.module('starter.controllers', [])
     console.log("test log");
     user =$scope.user.username;
     password= $scope.user.password;
-    $http.post('http://localhost:8080/login/'+user+'/'+password)
+    $http.post('/login/'+user+'/'+password)
         .success(function(cb) {
             console.log("Succesfully POST le cookie /");
                 console.log(cb);
@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
   $scope.cree = function(){
     user =$scope.user.username;
     password= $scope.user.password;
-    $http.post('http://localhost:8080/cree/'+user+'/'+password)
+    $http.post('/cree/'+user+'/'+password)
     .success(function(cb) {
         console.log(cb);
         })
@@ -35,7 +35,7 @@ angular.module('starter.controllers', [])
   .controller('ListCtrl', function ($scope, $http) {
     $scope.laliste ={};
     $scope.lalistenom={};
-    $http.get('http://localhost:8080/DiffListe/' + $scope.ListeName).success(function (data) {
+    $http.get('/DiffListe/' + $scope.ListeName).success(function (data) {
       console.log("Sucess ListeUser ?");
       $scope.lalistenom = data;
       lalistenom=data;
@@ -50,7 +50,7 @@ angular.module('starter.controllers', [])
 
     $scope.deleteList = function (listname) {
       console.log("test");
-      $http.post('http://localhost:8080/DeleteList/' +listname)
+      $http.post('/DeleteList/' +listname)
         .success(function (data) {
           $scope.lalistenom = data;
           console.log(data);
@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
 
     $scope.createList = function(){
       console.log($scope.Liste.text);
-      $http.post('http://localhost:8080/CreateList/',$scope.Liste)
+      $http.post('/CreateList/',$scope.Liste)
       .success(function(data){
           $scope.Liste = {};
           $scope.lalistenom = data;
@@ -83,7 +83,7 @@ angular.module('starter.controllers', [])
 
   .controller('ListDetailsCtrl', function($scope, $http) {
     $scope.modifyData={};
-    $http.get('http://localhost:8080/Listetache/' + noob)
+    $http.get('/Listetache/' + noob)
       .success(function (data) {
         $scope.laliste = data;
         console.log(data);
@@ -94,7 +94,7 @@ angular.module('starter.controllers', [])
       console.log($scope.laliste);
 
     $scope.deleteTodo =function(id){
-      $http.post('http://localhost:8080/Liste/delete/' + id+'/'+ noob)
+      $http.post('/Liste/delete/' + id+'/'+ noob)
             .success(function(data) {
                 $scope.laliste = data;
                 console.log(data);
@@ -104,7 +104,7 @@ angular.module('starter.controllers', [])
             });
     }
     $scope.createTodo = function() {
-       $http.post('http://localhost:8080/ListeCreate/'+noob, $scope.formData)
+       $http.post('/ListeCreate/'+noob, $scope.formData)
            .success(function(data) {
                $scope.formData = {};
                $scope.laliste = data;
@@ -116,7 +116,7 @@ angular.module('starter.controllers', [])
    };
 
    $scope.isChecked = function(id,done) {
-    $http.put('http://localhost:8080/Liste/' +id+'/'+done+'/'+noob)
+    $http.put('/Liste/' +id+'/'+done+'/'+noob)
     .success(function(data) {
         $scope.laliste = data;
         console.log(data);
@@ -147,7 +147,7 @@ angular.module('starter.controllers', [])
         document.getElementById('xtext-' + index).style.display = "block";
         document.getElementById('modify-' + index).innerHTML = 'modifier';
         console.log("valeur de la boite à la validation" + $scope.modifyData.text);
-        $http.post('http://localhost:8080/Liste/modify/' + x._id + '/' + $scope.modifyData.text + '/'+noob)
+        $http.post('/Liste/modify/' + x._id + '/' + $scope.modifyData.text + '/'+noob)
           .success(function (data) {
             $scope.laliste = data;
             console.log(data);

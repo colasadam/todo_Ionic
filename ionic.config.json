@@ -22,7 +22,7 @@
       "proxyUrl": "https://todo-adam-colas.herokuapp.com/deleteTask"
     },
     {
-      "path":"/login",
+      "path":"/login/",
       "proxyUrl": "https://todo-adam-colas.herokuapp.com/login"
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "path": "/CreateList/",
-      "proxyUrl": "https://todo-adam-colas.herokuapp.com/CreateList/"
+      "proxyUrl": "https://todo-adam-colas.herokuapp.com/CreateList"
     },
     {
       "path": "/DeleteList",
@@ -58,7 +58,7 @@
       "proxyUrl": "https://todo-adam-colas.herokuapp.com/Listetache"
     },
     {
-      "path": "/DiffListe",
+      "path": "/DiffListe/",
       "proxyUrl": "https://todo-adam-colas.herokuapp.com/DiffListe"
     },
     {
