@@ -3,7 +3,7 @@
   L'application est déployée sur https://todo-adam-colas.herokuapp.com
 
 # Utilisation 
-1.```git clone https://github.com/colasadam/todo_web.git && cd todo_web```
+1.```git clone https://github.com/colasadam/todo_Ionic.git && cd todo_Ionic```
 
 2.```npm install```
 
